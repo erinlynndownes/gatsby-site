@@ -1,10 +1,25 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Interactive Developer - Erin Downes`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    siteTitle: `Erin Downes - Interactive Developer`,
+    siteTitleAlt: `Erin Downes - Interactive Developer`,
+    siteHeadline: `Erin Downes - Interactive Developer`,
+    siteUrl: `https://erinlynndownes.net`,
+    siteDescription: `Playful and Colorful One-Page portfolio featuring Parallax effects and animations`,
+    siteLanguage: `en`,
+    siteImage: `/banner.jpg`,
+    author: `Erin Downes`,
+    basePath: `/`,
   },
   plugins: [
+    {
+      resolve: `@lekoarts/gatsby-theme-cara`,
+      options: {},
+    },
+    `gatsby-plugin-mdx`,
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,6 +42,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-remark-responsive-iframe`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

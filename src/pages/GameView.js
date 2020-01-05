@@ -7,12 +7,12 @@ import { css } from "theme-ui"
 const exitBtnCss = (location) => {
   const btnLocation = location || 'right top'
   const locs = btnLocation.split(' ');
-  const x = locs.indexOf('left') || locs.indexOf('right') || locs.indexOf('center') || 0;
+  const x = Math.max(locs.indexOf('left') , locs.indexOf('right') , locs.indexOf('center') , 0);
   const y = x === 0 ? 1 : 0;
-  const cornerTop = locs[x] !== 'left' && locs[y] !== 'top' ? '8px' : '0';
-  const cornerLeft = locs[x] !== 'left' && !(locs[y] !== 'bottom' && y === 0 ) ? '8px' : '0';
-  const cornerRight = locs[x] === 'left' && locs[y] !== 'top' ? '8px' : '0';
-  const cornerBottom= locs[x] === 'left' && !(locs[y] !== 'bottom' && y === 0 ) ? '8px' : '0';
+  const cornerTop = locs[x] !== 'left' && !(locs[y] === 'top' && y === 0) ? '8px' : '0';
+  const cornerRight = locs[x] === 'left' && !(locs[y] === 'top' && y === 0) ? '8px' : '0';
+  const cornerBottom = locs[x] === 'left' && locs[y] === 'bottom' ? '8px' : '0';
+  const cornerLeft = locs[x] !== 'left' && !(locs[y] === 'top' && y === 0 ) ? '8px' : '0';
   return css({
     ...getBtnX(locs[x]),
     ...getBtnY(locs[y]),

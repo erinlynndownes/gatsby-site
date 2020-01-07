@@ -56,7 +56,7 @@ const GameView = ({location}) => {
         fontSize: [1, 2, 3]
       })} to={'/'}>EXIT</Link>
     </div>
-    <iframe allow="gyroscope;accelerometer" sandbox="allow-same-origin;allow-scripts" css={css({
+    <iframe allow="gyroscope;accelerometer" sandbox="allow-same-origin allow-scripts" css={css({
       display: `block`,
       height: `100vh`,
       maxWidth: `100%`,
